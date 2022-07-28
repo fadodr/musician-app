@@ -9,6 +9,9 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 // include routesss
+app.use('/health', (req, res, next) => {
+  res.status(200).send('Health Status : Excellent!')
+})
 app.use('/musician', musicianRoutes);
 
 app.use(express.static('public'));
